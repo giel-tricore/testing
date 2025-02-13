@@ -1,0 +1,126 @@
+/*.radio-wrapper-21 label {
+    background: #fff;
+    padding: 11px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: left;
+    box-shadow: 0 0 0 1px #d8dee4;
+    transition: all 0.2s ease;
+  }
+  .radio-wrapper-21 label:hover {
+    background: #f5f6f8;
+  }
+  .radio-wrapper-21 input {
+    clip: rect(0, 0, 0, 0);
+    border-width: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  .radio-wrapper-21 input:checked ~ label {
+    box-shadow: 0 0 0 1.5px #675dff;
+    color: #533afd;
+  }
+  .radio-wrapper-21 input:focus ~ label {
+    box-shadow: 0 0 0 1.5px #675dff, 0 0 0 4px rgba(1, 150, 237, .36);
+  }
+  .radio-wrapper-21 input ~ label .title {
+    font-weight: 600;
+    margin-bottom: .5em;
+  }
+  .radio-wrapper-21 input ~ label .title,
+  .radio-wrapper-21 input ~ label .description {
+    display: block;
+    font-size: 12px;
+  }
+  .radio-wrapper-21 input ~ label .description {
+    color: #596171;
+  }*/
+  .unavailabledates {
+    background-color: red !important;
+  }
+.special-hover-date {
+    position: relative; /* Required to position :before and :after relative to the date cell */
+}
+
+/*.special-hover-date:before {
+    content: "";
+    position: absolute;
+    box-shadow: inset 0 0 0 1px yellow;
+    background: yellow !important;
+    width: 100%;
+    aspect-ratio: 1; 
+    border-radius: 50%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}*/
+
+.special-hover-date:hover:before {
+    content: "";
+    position: absolute;
+    box-shadow: inset 0 0 0 1px #FFFF00;
+    background: #FFFF00 !important;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.special-hover-date:hover:after {
+    content: "";
+    position: absolute;
+    background: transparent !important;
+    width: 50%;
+    aspect-ratio: 1/2;
+    border-radius: 25%;
+    z-index: 2;
+    top: 25%;
+    left: 25%;
+}
+
+.special-hover-date-red {
+    position: relative; 
+}
+.special-hover-date-red:hover:before {
+    content: "";
+    position: absolute;
+    box-shadow: inset 0 0 0 1px #FF0000;
+    background: #FF0000 !important;
+    width: 100%;
+    aspect-ratio: 1; 
+    border-radius: 50%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.special-hover-date-red:hover:after {
+    content: "";
+    position: absolute;
+    background: transparent !important;
+    width: 50%;
+    aspect-ratio: 1/2;
+    border-radius: 25%;
+    z-index: 2;
+    top: 25%;
+    left: 25%;
+}
+button.special-hover-date-red:disabled {
+    background-color: red !important; 
+    border-radius: 50%;
+}
+button.special-hover-date:not(:disabled) {
+    background-color: yellow !important; 
+    border-radius: 50% !important; 
+}
+

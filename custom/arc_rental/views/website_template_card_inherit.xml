@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="rental_product_inherit" inherit_id="website_sale_renting.rental_product">
+        <xpath expr="//div[@id='rentingDates']" position="after">
+            <table class="o_not_editable table w-70" id="">
+                <tbody>
+                    <t t-foreach="product.product_pricing_ids" t-as="pricing_info">
+                        <tr>
+                            <td>
+                                <span class="oe_radio_input">
+                                    <input type="radio"
+                                           t-att-name="'pricing_info_option'"
+                                           t-att-id="pricing_info.recurrence_id.id"
+                                           t-att-value="pricing_info.recurrence_id.id"
+                                           t-att-title="pricing_info.recurrence_id.name"
+                                           t-att-data-duration='pricing_info.recurrence_id.duration'
+                                           />
+                                </span>
+                                <label t-esc="pricing_info.recurrence_id.name"/>
+                                <t t-set="rental_start_time" t-value="float(pricing_info.recurrence_id.rental_start_time or 0)"/>
+                                <t t-set="start_minutes" t-value="int(rental_start_time * 60 // 60)"/>
+                                <t t-set="start_seconds" t-value="int(rental_start_time * 60 % 60)"/>
+                                <t t-set="rental_end_time" t-value="float(pricing_info.recurrence_id.rental_end_time or 0)"/>
+                                <t t-set="end_minutes" t-value="int(rental_end_time * 60 // 60)"/>
+                                <t t-set="end_seconds" t-value="int(rental_end_time * 60 % 60)"/>
+                                <span>(<t t-esc="'{:02}:{:02}'.format(start_minutes, start_seconds)"/> - <t t-esc="'{:02}:{:02}'.format(end_minutes, end_seconds)"/>)</span>
+                                <span class="availability-status">
+                                    <i class="text-success d-none" t-att-data-value="pricing_info.recurrence_id.rental_time">Available</i>
+                                    <i class="text-danger d-none" t-att-data-value="pricing_info.recurrence_id.rental_time">Not Available</i>
+                                </span>
+                            </td>
+                            <td>
+                                <span><t t-esc="pricing_info.price" t-options="{'widget': 'monetary', 'display_currency': pricing_info.currency_id}"/></span>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+
+            <t t-set="date_info" t-value="product.getDateInfo()"/>
+            <i class='d-none get_date_info' t-att-data-date_info='date_info'></i>
+        </xpath>
+        
+        <xpath expr="//table[@id='oe_wsale_rental_pricing_table']" position="replace">
+            <!-- <table class="o_not_editable table w-60">
+                <tbody>
+                    <t t-foreach="product.product_pricing_ids" t-as="pricing_info">
+                        <tr>
+                            <td class="w-50">
+                                <span><t t-esc="pricing_info.recurrence_id.name"></t></span>
+                                <t t-set="rental_start_time" t-value="float(pricing_info.recurrence_id.rental_start_time or 0)"/>
+                                <t t-set="start_minutes" t-value="int(rental_start_time * 60 // 60)"/>
+                                <t t-set="start_seconds" t-value="int(rental_start_time * 60 % 60)"/>
+                                <t t-set="rental_end_time" t-value="float(pricing_info.recurrence_id.rental_end_time or 0)"/>
+                                <t t-set="end_minutes" t-value="int(rental_end_time * 60 // 60)"/>
+                                <t t-set="end_seconds" t-value="int(rental_end_time * 60 % 60)"/>
+                                <span>(<t t-esc="'{:02}:{:02}'.format(start_minutes, start_seconds)"/> - <t t-esc="'{:02}:{:02}'.format(end_minutes, end_seconds)"/>)</span>
+                            </td>
+                            <td class="w-50 text-muted" t-esc="pricing_info.price" t-options="{'widget': 'monetary', 'display_currency': pricing_info.currency_id}"/>
+                        </tr>
+                    </t>
+                </tbody>
+            </table> -->
+        </xpath>
+
+        <xpath expr="//div[@class='h4 o_renting_details my-2 col-md-8 ps-0 d-flex justify-content-between']" position="replace"/>
+        
+    </template>
+
+    <template id="cart_inherit" inherit_id="website_sale_renting.cart">
+
+        <xpath expr="//div[@id='cart_rental_period']" position="replace">
+            <div t-if="website_sale_order.has_rented_products" class="o_website_sale_daterange_picker mb-4 pb-3 border-bottom" id="cart_rental_period">
+                <!-- <h5>Rental period Testing</h5>
+                <h6 class="text-muted small">Applies to all rented items</h6>
+                <input type="hidden" name="default_start_date" t-att-value="website_sale_order.rental_start_date"/>
+                <input type="hidden" name="default_end_date" t-att-value="website_sale_order.rental_return_date"/>
+                <input type="hidden" name="rental_duration_unit" t-attf-value="{{'hour' if website_sale_order._is_renting_possible_in_hours() else 'day'}}"/> -->
+                <div class="oe_unremovable w-100">
+                    <div class="s_website_form_datetime input-group date col-md-8 ps-0 o_daterange_picker"
+                            data-target-input="nearest"
+                            id="rentingDates">
+                        <!-- <input type="text" name="renting_start_date" class="form-control"/> -->
+                        <!-- <input type="text" name="renting_end_date" class="form-control"/> -->
+                        <!-- <div class="input-group-text"> -->
+                            <!-- <i class="fa fa-calendar"/> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <div class="o_renting_warning alert alert-warning d-none my-2" role="alert">
+                    <span class="small">
+                        <i class="fa fa-warning"/>
+                        <!-- <span name="renting_warning_message"/> -->
+                    </span>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- <template id="cart_summary" inherit_id="website_sale_renting.cart_summary">
+        <xpath expr="//div[@class='oe_unremovable d-flex gap-1 align-items-center w-100 text-muted']" position="replace">
+            <div t-if="website_sale_order and website_sale_order.has_rented_products" class="pt-3 border-top mb-3">
+                <div class="oe_unremovable d-flex gap-1 align-items-center w-100 text-muted">
+                    <t t-set="rental_start_time" t-value="float(website_sale_order.rental_time.rental_start_time or 0)"/>
+                    <t t-set="start_minutes" t-value="int(rental_start_time * 60 // 60)"/>
+                    <t t-set="start_seconds" t-value="int(rental_start_time * 60 % 60)"/>
+                    <t t-set="rental_end_time" t-value="float(website_sale_order.rental_time.rental_end_time or 0)"/>
+                    <t t-set="end_minutes" t-value="int(rental_end_time * 60 // 60)"/>
+                    <t t-set="end_seconds" t-value="int(rental_end_time * 60 % 60)"/>
+
+                    <span t-field="website_sale_order.rental_start_date"
+                          t-options="{'widget': 'date'}"
+                          class="o_not_editable"/>
+                    <span t-esc="'{:02}:{:02}'.format(start_minutes, start_seconds)"/>
+                    <i class="oi oi-arrow-right"/>
+                    <span t-field="website_sale_order.rental_return_date"
+                          t-options="{'widget': 'date'}"
+                          class="o_not_editable"/>
+                    <span t-esc="'{:02}:{:02}'.format(end_minutes, end_seconds)"/>
+                </div>
+            </div>
+        </xpath>
+    </template> -->
+
+</odoo>

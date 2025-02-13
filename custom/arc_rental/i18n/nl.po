@@ -1,0 +1,211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* arc_rental
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-07 07:43+0000\n"
+"PO-Revision-Date: 2025-01-07 09:40+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: arc_rental
+#: model:ir.model.fields.selection,name:arc_rental.selection__sale_temporal_recurrence__rental_time__afternoon
+msgid "Afternoon"
+msgstr "Namiddag"
+
+#. module: arc_rental
+#: model:ir.model.fields.selection,name:arc_rental.selection__sale_order__rental_time__afternoon
+#: model_terms:ir.ui.view,arch_db:arc_rental.rental_product_inherit
+msgid "Afternoon (1PM-6PM)"
+msgstr "Namiddag (13:00-18:00)"
+
+#. module: arc_rental
+#: model_terms:ir.ui.view,arch_db:arc_rental.rental_product_inherit
+msgid "Available"
+msgstr "Beschikbaar maken"
+
+#. module: arc_rental
+#: model:ir.model.fields.selection,name:arc_rental.selection__sale_temporal_recurrence__rental_time__fullday
+msgid "Full Day"
+msgstr "Volledige dag"
+
+#. module: arc_rental
+#: model:ir.model.fields.selection,name:arc_rental.selection__sale_order__rental_time__fullday
+#: model_terms:ir.ui.view,arch_db:arc_rental.rental_product_inherit
+msgid "Full Day (9AM-6PM)"
+msgstr "Volledige dag (9:00-18:00)"
+
+#. module: arc_rental
+#: model:ir.model.fields.selection,name:arc_rental.selection__sale_temporal_recurrence__rental_time__morning
+msgid "Morning"
+msgstr "Ochtend"
+
+#. module: arc_rental
+#: model:ir.model.fields.selection,name:arc_rental.selection__sale_order__rental_time__morning
+#: model_terms:ir.ui.view,arch_db:arc_rental.rental_product_inherit
+msgid "Morning (9AM-1PM)"
+msgstr "Ochtend (9:00-13:00)"
+
+#. module: arc_rental
+#: model:sale.temporal.recurrence,name:arc_rental.renting_data_2
+msgid "Namiddag (13:00-18:00)"
+msgstr ""
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Next century"
+msgstr "Volgende eeuw"
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Next decade"
+msgstr "Volgend decennium"
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Next month"
+msgstr "Volgende maand"
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Next year"
+msgstr "Volgend jaar"
+
+#. module: arc_rental
+#: model:sale.temporal.recurrence,name:arc_rental.renting_data_1
+msgid "Ochtend(9:00-13:00)"
+msgstr ""
+
+#. module: arc_rental
+#. odoo-python
+#: code:addons/arc_rental/models/product_template.py:0
+#, python-format
+msgid "Please choose a return date that is after the pickup date."
+msgstr "Kies alstublieft een retourdatum die na de ophaaldatum ligt."
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Previous century"
+msgstr "Vorige eeuw"
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Previous decade"
+msgstr "Vorige decennium"
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Previous month"
+msgstr "Vorige maand"
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Previous year"
+msgstr "Vorig jaar"
+
+#. module: arc_rental
+#: model:ir.model,name:arc_rental.model_product_pricelist
+msgid "Pricelist"
+msgstr "Prijslijst"
+
+#. module: arc_rental
+#: model:ir.model,name:arc_rental.model_product_template
+msgid "Product"
+msgstr ""
+
+#. module: arc_rental
+#: model:ir.model.fields,field_description:arc_rental.field_sale_order__rental_time
+#: model:ir.model.fields,field_description:arc_rental.field_sale_order_line__rental_time
+#: model:ir.model.fields,field_description:arc_rental.field_sale_temporal_recurrence__rental_time
+msgid "Rental Time"
+msgstr "Huurperiode"
+
+#. module: arc_rental
+#: model:ir.model,name:arc_rental.model_sale_temporal_recurrence
+msgid "Sale temporal Recurrence"
+msgstr "Tijdelijke verkoop herhaling"
+
+#. module: arc_rental
+#: model:ir.model,name:arc_rental.model_sale_order
+msgid "Sales Order"
+msgstr "Verkooporder"
+
+#. module: arc_rental
+#: model:ir.model,name:arc_rental.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Verkooporderregel"
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Select century"
+msgstr "Selecteer eeuw"
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Select decade"
+msgstr "Selecteer decennium"
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Select month"
+msgstr "Selecteer maand"
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Select year"
+msgstr "Selecteer jaar"
+
+#. module: arc_rental
+#: model:ir.model.constraint,message:arc_rental.constraint_sale_order_rental_period_coherence
+msgid "The rental start date must be before the rental return date if any."
+msgstr "De startdatum van de huur moet vóór de retourdatum van de huur liggen, indien van toepassing."
+
+#. module: arc_rental
+#: model_terms:ir.ui.view,arch_db:arc_rental.rental_product_inherit
+msgid "Unavailable"
+msgstr "Niet beschikbaar"
+
+#. module: arc_rental
+#: model:sale.temporal.recurrence,name:arc_rental.renting_data_3
+msgid "Volledige dag (9:00-18:00)"
+msgstr ""
+
+#. module: arc_rental
+#. odoo-javascript
+#: code:addons/arc_rental/static/src/js/datetime_picker.js:0
+#, python-format
+msgid "Week numbers"
+msgstr "Weeknummers"

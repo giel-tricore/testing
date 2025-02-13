@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="rental_sale_order_form_view" model="ir.ui.view">
+        <field name="name">rental.sale.order.form.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='show_update_duration']" position="after">                
+                <field name='rental_time_com' invisible='1'/>
+                <field name='rental_time'  widget='many2many_checkboxes' domain="[('id', 'in', rental_time_com)]" invisible="not is_rental_order"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="rental_sale_order_form_view_rant" model="ir.ui.view">
+        <field name="name">rental.sale.order.form.view.rant</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_renting.rental_order_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='rental_start_date']" position="replace">
+                <field name="rental_start_date"
+                       string="Rental period"
+                       invisible="not is_rental_order"
+                       required="has_rented_products"/>
+               <field name='rental_return_date' invisible='1'/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

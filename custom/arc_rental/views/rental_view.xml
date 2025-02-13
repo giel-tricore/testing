@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="s_rental_search_inherite" inherit_id="website_sale_renting.rental_product">
+        <xpath expr="//input[@name='renting_end_date']" position="attributes">
+            <attribute name="style">display:none</attribute>
+
+        </xpath>
+    </template>
+    
+    
+</odoo>

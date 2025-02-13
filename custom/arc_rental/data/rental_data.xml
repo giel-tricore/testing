@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="renting_data_1" model="sale.temporal.recurrence">
+            <field name="name">Morning</field>
+            <field name="duration">4</field>
+            <field name="unit">hour</field>
+            <field name="rental_time">morning</field>
+        </record>
+        
+        <record id="renting_data_2" model="sale.temporal.recurrence">
+            <field name="name">Afternoon</field>
+            <field name="duration">4</field>
+            <field name="unit">hour</field>
+            <field name="rental_time">afternoon</field>
+        </record>
+        
+        <record id="renting_data_3" model="sale.temporal.recurrence">
+            <field name="name">Full Day</field>
+            <field name="duration">9</field>
+            <field name="unit">hour</field>
+            <field name="rental_time">fullday</field>
+        </record>
+    
+    </data>
+    
+</odoo>
